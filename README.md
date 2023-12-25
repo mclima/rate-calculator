@@ -1,2 +1,2 @@
 # rate-calculator
-Calculate net ad rates
+Calculate ad net rates

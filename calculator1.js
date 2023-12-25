@@ -735,119 +735,119 @@ function CreateRateCard() {
 function getCalculation(){	
 	CreateRateCard()
 	var s='';
-		for (i=0;i<73; i++) {
-			for (j=0;j<9; j++) {
-				s=s+ RateCard[i][j];			
-			}
+	for (i=0;i<73; i++) {
+		for (j=0;j<9; j++) {
+			s=s+ RateCard[i][j];			
 		}
+	}
 
 	var one = eval(getArray(document.rateForm.myInches.value,document.rateForm.myColumn.value));
 	var sum = "";
 	
-		for (i=0;i<document.rateForm.colorRate.length; i++) {
-							
-							var color=-1;							
-							
-										if(document.rateForm.colorRate[i].checked == true) {
-												
-												color=i;
-												var str =  document.rateForm.colorRate[color].value;
-												//var one = eval(document.rateForm.colorRate[color].value);	
-											  var inches = eval(document.rateForm.myInches.value);										  
-											  													
-											 if(str == "black") {	
-													var two = eval(str.replace("black","0"));												
-													}
-																																	
-												if(str == "standard") {													
-													if (inches > 9 && inches < 44) {												
-													var two = eval(str.replace("standard","1670"));												
-													}	
-													else if (inches > 43 && inches < 71) {												
-													var two = eval(str.replace("standard","2253"));												
-												  }	
-													else if(inches == 71) {												
-													var two = eval(str.replace("standard","3340"));												
-													}	
-													else if (inches == 72) {												
-													var two = eval(str.replace("standard","4506"));												
-													}
-												}	
-												
-												if(str == "twocolor") {													
-													if (inches > 9 && inches < 44) {												
-													var two = eval(str.replace("twocolor","1798"));												
-													}
-													else if(inches > 43 && inches < 71) {												
-													var two = eval(str.replace("twocolor","2393"));												
-													}	
-													else if (inches == 71) {												
-													var two = eval(str.replace("twocolor","3596"));												
-													}	
-													else if(inches == 72) {												
-													var two = eval(str.replace("twocolor","4786"));												
-													}	
-												}
-											
-												if(str == "metallic")  {
-													if (inches > 9 && inches < 44){												
-													var two = eval(str.replace("metallic","2070"));												
-													}	
-													else if (inches > 43 && inches < 71) {												
-													var two = eval(str.replace("metallic","2743"));												
-													}	
-													else if(inches == 71) {												
-													var two = eval(str.replace("metallic","4140"));												
-													}	
-													else if(inches == 72) {												
-													var two = eval(str.replace("metallic","5486"));												
-													}												
-												}		
-																					
-												if(str == "fourcolor") {
-													if(inches > 9 && inches < 44) {												
-													var two = eval(str.replace("fourcolor","2231"));												
-													}	
-													else if (inches > 43 && inches < 71) {												
-													var two = eval(str.replace("fourcolor","2984"));												
-													}		
-												  else if(inches == 71) {												
-													var two = eval(str.replace("fourcolor","4462"));												
-													}	
-													else if(inches == 72) {												
-													var two = eval(str.replace("fourcolor","5986"));												
-													}	
-												}	
-												
-												if(str == "fivecolor") {
-													if (inches > 9 && inches < 44) {												
-													var two = eval(str.replace("fivecolor","4048"));												
-													}	
-													else if(inches > 43 && inches < 71) {												
-													var two = eval(str.replace("fivecolor","5402"));												
-													}	
-													else if(inches == 71) {												
-													var two = eval(str.replace("fivecolor","8096"));												
-													}	
-													else if(inches == 72) {												
-													var two = eval(str.replace("fivecolor","10804"));	
-													}											
-												}	
-																										
-												sum = one  +  two;				
-										}
-									
-								
-							document.rateForm.myTotal.value = "";	
-							document.rateForm.myCalculation.value=formatCurrency(sum);	
-								
-				}	
+	for (i=0;i<document.rateForm.colorRate.length; i++) {
+						
+		var color=-1;							
+						
+		if(document.rateForm.colorRate[i].checked == true) {
 				
-				if (sum == "") {
-					document.rateForm.myCalculation.value="";
-					alert("Please confirm Column Inches/Frequency and select Color");
-					
+			color=i;
+			var str =  document.rateForm.colorRate[color].value;
+			//var one = eval(document.rateForm.colorRate[color].value);	
+			var inches = eval(document.rateForm.myInches.value);										  
+																
+			if(str == "black") {	
+				var two = eval(str.replace("black","0"));												
+			}
+																									
+			if(str == "standard") {													
+				if (inches > 9 && inches < 44) {												
+				var two = eval(str.replace("standard","1670"));												
+				}	
+				else if (inches > 43 && inches < 71) {												
+				var two = eval(str.replace("standard","2253"));												
+				  }	
+				else if(inches == 71) {												
+				var two = eval(str.replace("standard","3340"));												
+				}	
+				else if (inches == 72) {												
+				var two = eval(str.replace("standard","4506"));												
 				}
+			}	
+			
+			if(str == "twocolor") {													
+				if (inches > 9 && inches < 44) {												
+				var two = eval(str.replace("twocolor","1798"));												
+				}
+				else if(inches > 43 && inches < 71) {												
+				var two = eval(str.replace("twocolor","2393"));												
+				}	
+				else if (inches == 71) {												
+				var two = eval(str.replace("twocolor","3596"));												
+				}	
+				else if(inches == 72) {												
+				var two = eval(str.replace("twocolor","4786"));												
+				}	
+			}
+		
+			if(str == "metallic")  {
+				if (inches > 9 && inches < 44){												
+				var two = eval(str.replace("metallic","2070"));												
+				}	
+				else if (inches > 43 && inches < 71) {												
+				var two = eval(str.replace("metallic","2743"));												
+				}	
+				else if(inches == 71) {												
+				var two = eval(str.replace("metallic","4140"));												
+				}	
+				else if(inches == 72) {												
+				var two = eval(str.replace("metallic","5486"));												
+				}												
+			}		
+																				
+			if(str == "fourcolor") {
+				if(inches > 9 && inches < 44) {												
+				var two = eval(str.replace("fourcolor","2231"));												
+				}	
+				else if (inches > 43 && inches < 71) {												
+				var two = eval(str.replace("fourcolor","2984"));												
+				}		
+			  else if(inches == 71) {												
+				var two = eval(str.replace("fourcolor","4462"));												
+				}	
+				else if(inches == 72) {												
+				var two = eval(str.replace("fourcolor","5986"));												
+				}	
+			}	
+											
+			if(str == "fivecolor") {
+				if (inches > 9 && inches < 44) {												
+				var two = eval(str.replace("fivecolor","4048"));												
+				}	
+				else if(inches > 43 && inches < 71) {												
+				var two = eval(str.replace("fivecolor","5402"));												
+				}	
+				else if(inches == 71) {												
+				var two = eval(str.replace("fivecolor","8096"));												
+				}	
+				else if(inches == 72) {												
+				var two = eval(str.replace("fivecolor","10804"));	
+				}											
+			}	
+																	
+			sum = one  +  two;				
+		}
+								
+							
+			document.rateForm.myTotal.value = "";	
+			document.rateForm.myCalculation.value=formatCurrency(sum);	
+							
+		}	
+		
+		if (sum == "") {
+			document.rateForm.myCalculation.value="";
+			alert("Please confirm Column Inches/Frequency and select Color");
+			
+		}
 							
 }
 
@@ -859,53 +859,53 @@ function getTotal(){
 	
 	// eval(document.rateForm.myTotal.value)
 	
-		if (sum == "") {
+	if (sum == "") {
+	
+	//alert(myTotal);
+	alert("Please calculate Rate per Ad (Gross)");
+	}
+	
+	else {
+		myTotal= sum - (sum*.15);			
+		document.rateForm.myTotal.value=formatCurrency(myTotal);	
 		
-		//alert(myTotal);
-		alert("Please calculate Rate per Ad (Gross)");
-		}
-		
-		else {
-			myTotal= sum - (sum*.15);			
-			document.rateForm.myTotal.value=formatCurrency(myTotal);	
-			
-		}
+	}
 	
 }
 
 function getArray(row,col){
-var result = RateCard[row][col];
- return result;
+	var result = RateCard[row][col];
+ 	return result;
 }
 
 function formatCurrency(num) {
 	num = num.toString().replace(/\$|\,/g,'');
-			if(isNaN(num))
-			num = "0";
-			sign = (num == (num = Math.abs(num)));
-			num = Math.floor(num*100+0.50000000001);
-			cents = num%100;
-			num = Math.floor(num/100).toString();
-			
-			if(cents<10)
-			cents = "0" + cents;
-			for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
-			num = num.substring(0,num.length-(4*i+3))+','+
-			num.substring(num.length-(4*i+3));
-			return (((sign)?'':'-') + '$' + num + '.' + cents);
+	if(isNaN(num))
+	num = "0";
+	sign = (num == (num = Math.abs(num)));
+	num = Math.floor(num*100+0.50000000001);
+	cents = num%100;
+	num = Math.floor(num/100).toString();
+	
+	if(cents<10)
+	cents = "0" + cents;
+	for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+	num = num.substring(0,num.length-(4*i+3))+','+
+	num.substring(num.length-(4*i+3));
+	return (((sign)?'':'-') + '$' + num + '.' + cents);
 }
 
 function resetForm1() {
-		for (i=0;i<document.rateForm.colorRate.length; i++) {							
-							document.rateForm.colorRate[i].checked = false;		
-						}
+	for (i=0;i<document.rateForm.colorRate.length; i++) {							
+		document.rateForm.colorRate[i].checked = false;		
+	}
 	document.rateForm.myCalculation.value='';
 	document.rateForm.myTotal.value=''
 } 
 function resetForm2() {
-		for (i=0;i<document.rateForm.colorRate.length; i++) {							
-							document.rateForm.colorRate[i].checked = false;		
-						}
+	for (i=0;i<document.rateForm.colorRate.length; i++) {							
+		document.rateForm.colorRate[i].checked = false;		
+	}
 	document.rateForm.myCalculation.value='';
 	document.rateForm.myTotal.value=''
 } 
